@@ -1,15 +1,19 @@
 package com.muzzy.dto;
 
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.stereotype.Component;
 
-@Getter
-@Setter
+
 @Component
-public class TransactionDto {
-    private String sender;
+public class TransactionDto extends TransactionDtoPublic {
     private String privateKey;
-    private String reciever;
-    private Float value;
+
+    public String getPrivateKey() {
+        return privateKey;
+    }
+
+    public TransactionDto setPrivateKey(String privateKey) {
+        this.privateKey = privateKey;
+        return this;
+    }
+
 }
